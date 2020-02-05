@@ -44,4 +44,6 @@ class CLSSIS3820(Device):
         self.update_kind(disabled_type)
 
 
-sis = CLSSIS3820('MCS1607-701:mcs', name='sis') 
+sis = CLSSIS3820('MCS1607-701:mcs', name='sis')
+
+sd.baseline = [getattr(sis.channels, ch) for ch in sis.channels.component_names]

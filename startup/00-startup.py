@@ -1,4 +1,10 @@
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
 import bluesky.plans as bp
+import bluesky.plan_stubs as bps
+import bluesky.preprocessors as bpp
 from bluesky.run_engine import RunEngine
 from bluesky import SupplementalData
 from bluesky.callbacks.best_effort import BestEffortCallback
@@ -14,3 +20,5 @@ RE.preprocessors.append(sd)
 
 bec = BestEffortCallback()
 RE.subscribe(bec)
+
+db = RE.db
